@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DiagnosticController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,4 +26,14 @@ Route::prefix('patient')->group(function () {
     Route::post('/store',[PatientController::class,'store']);
     Route::post('/update/{id}',[PatientController::class, 'update']);
     Route::delete('/delete/{id}',[PatientController::class, 'delete']);
+});
+
+
+//Diagnostic
+Route::prefix('assingdiagnostic')->group(function () {
+    Route::get('/',[DiagnosticController::class,'index']);
+    Route::get('/{id}',[DiagnosticController::class,'show']);
+    Route::post('/store',[DiagnosticController::class,'store']);
+    Route::post('/update/{id}',[DiagnosticController::class, 'update']);
+    Route::delete('/delete/{id}',[DiagnosticController::class, 'delete']);
 });

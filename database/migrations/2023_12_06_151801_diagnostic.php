@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('diagnostics', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->string('description',255);
+            $table->string('description',255)->nullable($value = true);
+            $table->timestamps();
         });
     }
 

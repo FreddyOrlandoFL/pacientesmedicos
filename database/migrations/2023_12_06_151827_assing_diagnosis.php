@@ -17,8 +17,9 @@ return new class extends Migration
             $table->foreign('patient')->references('id')->on('patients');
             $table->unsignedBigInteger('diagnostic');
             $table->foreign('diagnostic')->references('id')->on('diagnostics');
-            $table->string('observation',255);
-            $table->string('creation',255);
+            $table->string('observation',255)->nullable($value = true);
+            $table->timestamp('creation');
+            $table->timestamps();
         });
     }
 
