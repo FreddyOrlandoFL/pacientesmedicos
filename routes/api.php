@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PatientController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+//Pacientes
+Route::prefix('patient')->group(function () {
+    Route::get('/',[PatientController::class,'index']);
+    Route::get('/{id}',[PatientController::class,'show']);
+    Route::post('/store',[PatientController::class,'store']);
+    Route::post('/update/{id}',[PatientController::class, 'update']);
+    Route::delete('/delete/{id}',[PatientController::class, 'delete']);
 });
