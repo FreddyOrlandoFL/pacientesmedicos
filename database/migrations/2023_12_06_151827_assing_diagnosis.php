@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('assing_diagnostics', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('patient'); 
-            $table->foreign('patient')->references('id')->on('pacients');
+            $table->foreign('patient')->references('id')->on('patients');
             $table->unsignedBigInteger('diagnostic');
             $table->foreign('diagnostic')->references('id')->on('diagnostics');
             $table->string('observation',255);
