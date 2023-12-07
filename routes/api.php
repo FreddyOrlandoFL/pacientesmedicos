@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Pacientes
 Route::prefix('patient')->group(function () {
     Route::get('/',[PatientController::class,'index']);
+    Route::get('/searchpaciente',[PatientController::class,'searchpaciente']);
     Route::get('/{id}',[PatientController::class,'show']);
     Route::post('/store',[PatientController::class,'store']);
     Route::post('/update/{id}',[PatientController::class, 'update']);
@@ -32,6 +33,7 @@ Route::prefix('patient')->group(function () {
 //Diagnostic
 Route::prefix('assingdiagnostic')->group(function () {
     Route::get('/',[DiagnosticController::class,'index']);
+    Route::get('/diagnosticoasignados',[DiagnosticController::class,'diagnosticoasignados']);
     Route::get('/{id}',[DiagnosticController::class,'show']);
     Route::post('/store',[DiagnosticController::class,'store']);
     Route::post('/update/{id}',[DiagnosticController::class, 'update']);

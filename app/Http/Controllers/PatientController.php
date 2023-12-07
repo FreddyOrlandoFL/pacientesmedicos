@@ -14,6 +14,14 @@ class PatientController extends Controller
         $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')->get();
         return response()->json($Patient, 200);
     }
+    public function searchpaciente(Request $request){
+        $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')
+        ->where('first_name', 'LIKE', '%'.$request->first_name.'%')
+        ->where('last_name', 'LIKE', '%'.$request->last_name.'%')
+        ->where('document', 'LIKE', '%'.$request->document.'%')
+        ->get();
+        return response()->json($Patient, 200);
+    }
     public function store(Request $request){
 
         try{

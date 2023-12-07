@@ -68,5 +68,16 @@ class DiagnosticController extends Controller
             \Log::info('Error al registrar la actividad: '.$e);
             return \Response::json(['created' => false], 500);
         }
-    }    
+    } 
+    public function diagnosticoasignados(){
+        $FechaActual=date('Y-m-d');
+        $SeisMeses = strtotime('-180 day', strtotime($FechaActual));
+        $SeisMeses = date('Y-m-d',$SeisMeses);
+        dd($FechaActual,$SeisMeses);
+        $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')
+        ->whereBetween('AssingDiagnostic.creation', [$SeisMeses, $FechaActual])
+        ->get();
+      
+        return response()->json($Diagnostic, 200);
+    }   
 }
