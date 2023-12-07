@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "6cccc461-6490-4dcb-923a-c57a92be974a",
+		"name": "Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25109454",
+		"_collection_link": "https://webclasslms.postman.co/workspace/Webclass~f357380a-e4fb-4e4d-88bc-87731a35f51f/collection/25109454-6cccc461-6490-4dcb-923a-c57a92be974a?action=share&source=collection_link&creator=25109454"
+	},
+	"item": [
+		{
+			"name": "pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Paciente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar paciente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\":\"13772817\",\r\n    \"first_name\":\"Milagros Del Valle\",\r\n    \"last_name\":\"Figueroa Lara\",\r\n    \"birth_date\": \"1978-03-31\",\r\n    \"email\":\"milafiglar@gmail.com\",\r\n    \"phone\":\"584127599932\",\r\n    \"genre\":\"Female\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AsignarDiagnostico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/assingdiagnostic/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"assingdiagnostic",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busqueda de Pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient/searchpaciente?first_name=&last_name=Figueroa&document=15575552",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient",
+						"searchpaciente"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": ""
+						},
+						{
+							"key": "last_name",
+							"value": "Figueroa"
+						},
+						{
+							"key": "document",
+							"value": "15575552"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5 Diagnostico que mas cantidad de veces hallan sido asignado a pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/assingdiagnostic/diagnosticoasignados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"assingdiagnostic",
+						"diagnosticoasignados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar paciente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient/show/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient",
+						"show",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Paciente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/pacientesmedicos/public/api/patient/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pacientesmedicos",
+						"public",
+						"api",
+						"patient",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

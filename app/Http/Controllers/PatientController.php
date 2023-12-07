@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Patient;
+use App\Models\AssingDiagnostic;
 use DB;
 
 class PatientController extends Controller
@@ -139,6 +140,23 @@ class PatientController extends Controller
         }
     } 
     public function delete($id){
+        $Patient=Patient::find($id);
+        if(!$Patient){
+            return response()->json([
+                "msj"=>"El paciente que intenta eliminar no se encuentra registrado"
+            ], 200);
+        
+        }
+        else
+        {
+            
+            AssingDiagnostic::where('patient',$id)->delete();
+            $Patient->delete();
+            return response()->json([
+                "msj"=>"Paciente eliminado con exito",
+                'Product' => $Patient
+            ], 200);
+        }
 
     }   
     public function show($id){
