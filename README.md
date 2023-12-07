@@ -91,7 +91,7 @@ Ejecute el comando php artisan migrate
 
 ## PASO 7
 
-Ejecute el comando php db:seed
+Ejecute el comando php artisan db:seed
 
 
 ## PASO 8
