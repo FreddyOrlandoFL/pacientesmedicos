@@ -73,9 +73,14 @@ class DiagnosticController extends Controller
         $FechaActual=date('Y-m-d');
         $SeisMeses = strtotime('-180 day', strtotime($FechaActual));
         $SeisMeses = date('Y-m-d',$SeisMeses);
-        dd($FechaActual,$SeisMeses);
-        $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')
-        ->whereBetween('AssingDiagnostic.creation', [$SeisMeses, $FechaActual])
+     
+        $Diagnostic=AssingDiagnostic::
+        select(DB::raw('diagnostics.name,count(diagnostics.id) as  cantidad'))
+        ->join('diagnostics','diagnostics.id','=','assing_diagnostics.diagnostic')
+        ->whereBetween('creation', [$SeisMeses, $FechaActual])
+        ->orderby('cantidad','DESC')
+        ->take(5)
+        ->groupBy('diagnostics.name')
         ->get();
       
         return response()->json($Diagnostic, 200);

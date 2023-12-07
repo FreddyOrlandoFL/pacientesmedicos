@@ -166,7 +166,52 @@ class AssingDiagnosticDatabaseSeeder extends Seeder
           
                 'created_at'=>date('Y-m-d H:i:s'),
                 'updated_at'=>date('Y-m-d H:i:s')
-            ]
+           ],[
+            'id'=>'19',
+            'patient'=>'3',
+            'diagnostic'=>'4',
+            'observation'=>'Carcinoma de Colon',
+            'creation'=>'2023-09-01',
+      
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+           ],[
+            'id'=>'20',
+            'patient'=>'2',
+            'diagnostic'=>'6',
+            'observation'=>'Anemia falciforme',
+            'creation'=>'2023-09-01',
+      
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ],[
+            'id'=>'21',
+            'patient'=>'4',
+            'diagnostic'=>'7',
+            'observation'=>'Leucemia mieloide crónica',
+            'creation'=>'2023-09-01',
+      
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ],[
+            'id'=>'22',
+            'patient'=>'6',
+            'diagnostic'=>'7',
+            'observation'=>'Leucemia mieloide crónica',
+            'creation'=>'2023-10-01',
+      
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ],[
+            'id'=>'23',
+            'patient'=>'5',
+            'diagnostic'=>'7',
+            'observation'=>'Leucemia mieloide crónica',
+            'creation'=>'2023-10-01',
+      
+            'created_at'=>date('Y-m-d H:i:s'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        ]
            
         ];
         foreach($AssingDiagnostic as $AssingDiagnostico)
