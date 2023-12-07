@@ -137,5 +137,15 @@ class PatientController extends Controller
             \Log::info('Error al registrar la actividad: '.$e);
             return \Response::json(['created' => false], 500);
         }
-    }    
+    } 
+    public function delete($id){
+
+    }   
+    public function show($id){
+        $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')
+        ->where('id', $id)
+        ->get();
+        return response()->json($Patient, 200);
+   
+    }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('diagnostic')->references('id')->on('diagnostics');
             $table->string('observation',255)->nullable($value = true);
             $table->timestamp('creation');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
