@@ -64,3 +64,43 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## PASO 1
+
+Cree su base de datos 
+
+## PASO 2
+
+Ejecute el comando composer update
+
+
+## PASO 3
+
+Configure las variable  de entorno DB_DATABASE,DB_USERNAME,DB_PASSWORD (archivo .env)
+
+## PASO 4
+
+Configure las variable  de entorno APP_URL (archivo .env)
+
+## PASO 5
+
+Ejecute el comando php artisan key:generate
+
+## PASO 6
+
+Ejecute el comando php artisan migrate
+
+## PASO 7
+
+Ejecute el comando php db:seed
+
+
+## PASO 8
+
+En la carpeta PostmanCollection se encuentran las colecciones del API del proyecto.
+
+## PASO 9
+Importar dichas colecciones en el postman para poder realizar la prueba
+
+
+## OPCIONAL PUEDE USAR EL COMANDO
+php artisan app:pacientes-medicos este comando cumple con los pasos del 2 al 7 , por eso es importante realizar primero el paso 1 y que el nombre de la base de datos creada sea el mismo que se colocara a la hora de que el comando solicite dicho nombre

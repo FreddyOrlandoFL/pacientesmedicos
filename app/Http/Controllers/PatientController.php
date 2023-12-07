@@ -8,9 +8,27 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Patient;
 use App\Models\AssingDiagnostic;
 use DB;
-
+/**
+* @OA\Info(title="API Usuarios", version="1.0")
+*
+* @OA\Server(url="http://swagger.local")
+*/
 class PatientController extends Controller
 {
+    /**
+    * @OA\Get(
+    *     path="/api/users",
+    *     summary="Mostrar usuarios",
+    *     @OA\Response(
+    *         response=200,
+    *         description="Mostrar todos los usuarios."
+    *     ),
+    *     @OA\Response(
+    *         response="default",
+    *         description="Ha ocurrido un error."
+    *     )
+    * )
+    */
     public function index(){
         $Patient=Patient::with('AssingDiagnostic','AssingDiagnostic.Diagnostic')->get();
         return response()->json($Patient, 200);
